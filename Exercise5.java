@@ -1,20 +1,11 @@
-//        Zadanie 2. Wczytać od użytkownika 3 liczby całkowite i wypisać na
-//        ekran największą oraz najmniejszą z nich.
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Exercise2 {
+public class Exercise5 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Podaj pierwszą liczbę: ");
-        int firstNumber = scanner.nextInt();
-
-        System.out.print("Podaj drugą liczbę: ");
-        int secondNumber = scanner.nextInt();
-
-        System.out.print("Podaj trzecią liczbę: ");
-        int thirdNumber = scanner.nextInt();
+        int firstNumber = input("Podaj pierwszą liczbę: ");
+        int secondNumber = input("Podaj drugą liczbę: ");
+        int thirdNumber = input("Podaj trzecią liczbę: ");
 
         int maximumNumber;
         int minimumNumber;
@@ -37,5 +28,16 @@ public class Exercise2 {
 
         System.out.println("Największa liczba to: " + maximumNumber);
         System.out.println("Najmniejsza liczba to: " + minimumNumber);
+    }
+
+    static int input(String message) {
+        try {
+            Scanner input = new Scanner(System.in);
+            System.out.print(message);
+            return input.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Podano złą wartość");
+            return input(message);
+        }
     }
 }
