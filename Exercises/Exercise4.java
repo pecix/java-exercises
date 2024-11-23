@@ -1,4 +1,4 @@
-//Zadanie 6. Napisać program realizujący funkcje prostego kalkulatora,
+package Exercises;//Zadanie 6. Napisać program realizujący funkcje prostego kalkulatora,
 //pozwalającego na wy- konywanie operacji dodawania, odejmowania,
 //mnożenia i dzielenia na dwóch licz- bach rzeczywistych. Program ma
 //identyfikować sytuację wprowadzenia błędnego symbolu działania
@@ -12,7 +12,6 @@
 //e) Wyświetla wynik lub - w razie konieczności - informację o niemożności
 //wy- konania działania.
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exercise4 {
@@ -20,9 +19,9 @@ public class Exercise4 {
         System.out.println("Prosty kalkulator");
         System.out.println("-----------------");
 
-        int a = inputInt("Podaj pierwszą liczbę: ");
+        int a = Utils.input("Podaj pierwszą liczbę: ");
         String sign = inputString("Podaj znak operacji (+, -, *, /): ");
-        int b = inputInt("Podaj pierwszą liczbę: ");
+        int b = Utils.input("Podaj pierwszą liczbę: ");
 
         System.out.println("-----------------");
 
@@ -48,18 +47,7 @@ public class Exercise4 {
         }
     }
 
-    static int inputInt(String message) {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print(message);
-            return scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Podano złą wartość");
-            return inputInt(message);
-        }
-    }
-
-    static String inputString(String message) {
+   static String inputString(String message) {
         Scanner input = new Scanner(System.in);
         System.out.print(message);
         return input.nextLine();

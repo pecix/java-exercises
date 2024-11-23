@@ -1,4 +1,4 @@
-//Zadanie 5. W sklepie ze sprzętem AGD oferowana jest sprzedaż
+package Exercises;//Zadanie 5. W sklepie ze sprzętem AGD oferowana jest sprzedaż
 //ratalna. Napisz program umożliwiający wyliczenie wysokości
 //miesięcznej raty za zakupiony sprzęt. Danymi wejściowymi dla
 //programu są:
@@ -10,14 +10,11 @@
 //określonych powyżej zakresach, a w przypadku błędu pytać prosić
 //użytkownika ponownie o podanie danych.
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Exercise3 {
     public static void main(String[] args) {
 
-        int price = inputInt("Podaj cenę towaru: ");
-        int rate = inputInt("Podaj liczbę rat: ");
+        int price = Utils.input("Podaj cenę towaru: ");
+        int rate = Utils.input("Podaj liczbę rat: ");
 
         printSeparator();
 
@@ -30,17 +27,6 @@ public class Exercise3 {
 
     static void printSeparator() {
         System.out.println("-----------------------");
-    }
-
-    static int inputInt(String message) {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print(message);
-            return scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Podano złą wartość");
-            return inputInt(message);
-        }
     }
 
     static boolean isParameterInvalid(int price, int rate) {
