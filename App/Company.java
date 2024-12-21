@@ -33,4 +33,11 @@ public class Company {
     public List<Employee> getEmployees() {
         return employees;
     }
+
+    public void addEmployee(String name, String surname) {
+        Person person = new Person(name, surname);
+        Employee employee = new Employee(person, Departament.ADMINISTRATION);
+
+        employees.add(employee);
+    }
 }
