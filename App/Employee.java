@@ -1,4 +1,4 @@
-package Test;
+package App;
 
 public class Employee extends Person {
     private Departament departament;

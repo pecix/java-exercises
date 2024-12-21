@@ -1,12 +1,17 @@
-package Test;
+package App;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Company {
     private String name;
     private Address address;
+    private final List<Employee> employees;
 
-    public Company(String name, Address address) {
+    public Company(String name) {
         this.name = name;
-        this.address = address;
+        this.address = new Address("Miasto", "Ulica");
+        this.employees = new ArrayList<>();
     }
 
     public String getName() {
@@ -23,5 +28,9 @@ public class Company {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
     }
 }

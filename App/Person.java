@@ -1,4 +1,4 @@
-package Test;
+package App;
 
 public class Person {
     private String name;

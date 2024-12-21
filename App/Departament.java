@@ -1,9 +1,10 @@
-package Test;
+package App;
 
 public enum Departament {
 
     SALES("Sprzedaż"),
-    ADMINISTRATION("Administracja");
+    ADMINISTRATION("Administracja"),
+    FINANCE("Finanse");
 
     private String name;
 

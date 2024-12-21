@@ -1,4 +1,4 @@
-package Test;
+package App;
 
 public class Address {
     private String city;
